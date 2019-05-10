@@ -1,0 +1,8 @@
+.card .card-content .card-title {
+  margin: 0;
+}
+
+p.timestamp {
+  color: rgb(180, 180, 180);
+  margin-bottom: 15px;
+}

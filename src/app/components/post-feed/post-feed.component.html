@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col s6">
+    <app-post-form
+      (addPostEvent)="onPostAdded($event)"
+      [post]="editingPost"
+    ></app-post-form>
+  </div>
+  <div class="col s1" style="margin:50px">
+    <form>
+      <input type="number" name="postLimit" [(ngModel)]="postLimit" />
+      <button (click)="setLimit()" class="waves-effect waves-light btn">
+        Set
+      </button>
+    </form>
+  </div>
+</div>
+<div class="row">
+  <div class="col s6" *ngFor="let post of posts">
+    <div class="card">
+      <div class="card-content">
+        <p class="card-title">
+          {{ post.title }}
+        </p>
+        <p class="timestamp">{{ post.createdAt | date }}</p>
+        <p>{{ post.body }}</p>
+      </div>
+      <div class="card-action">
+        <a href="#" (click)="editPost(post)">Edit</a>
+        <a href="#" (click)="deletePost(post.id)">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
